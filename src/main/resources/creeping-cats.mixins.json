@@ -3,11 +3,10 @@
 	"package": "oxded.creepingcats.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"CreeperExplodeMixin",
-		"CreeperFuseSpeedMixin",
 		"GoalSelectorAccessor",
 		"CreeperAccessor",
-		"CreeperIgniteGoalMixin"
+		"GoalCanStartMixin",
+		"GoalTickMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
