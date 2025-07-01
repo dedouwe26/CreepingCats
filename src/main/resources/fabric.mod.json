@@ -1,0 +1,31 @@
+{
+    "schemaVersion": 1,
+    "id": "creeping-cats",
+    "version": "1.0.0",
+    "name": "Creeping Cats",
+    "description": "Creeping Cats makes cats really scary for creepers. Whenever a tamed cat is walking, creepers don't explode.",
+    "authors": [
+        "0xDED"
+    ],
+    "contact": {
+        "homepage": "https://github.com/dedouwe26/CreepingCats",
+        "issues": "https://github.com/dedouwe26/CreepingCats/issues",
+        "sources": "https://github.com/dedouwe26/CreepingCats"
+    },
+    "icon": "assets/creeping-cats/icon.png",
+    "license": "MIT",
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+            "oxded.creepingcats.CreepingCats"
+        ]
+    },
+    "mixins": [
+        "creeping-cats.mixins.json"
+    ],
+    "depends": {
+        "fabricloader": ">=0.16.10",
+        "minecraft": "1.21.x",
+        "java": ">=17"
+    }
+}
