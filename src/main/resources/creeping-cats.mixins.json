@@ -4,9 +4,12 @@
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
 		"GoalSelectorAccessor",
-		"CreeperAccessor",
-		"GoalCanStartMixin",
-		"GoalTickMixin"
+		"ClassToFleeFromAccessor",
+		"FleePathAccessor",
+		"MobAccessor",
+		"TargetEntityAccessor",
+		"FleeGoalCanStartMixin",
+		"CreeperExplodeMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
