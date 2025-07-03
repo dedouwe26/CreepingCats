@@ -11,6 +11,7 @@ import net.minecraft.entity.ai.goal.FleeEntityGoal;
 import net.minecraft.entity.ai.pathing.Path;
 import net.minecraft.entity.mob.CreeperEntity;
 import net.minecraft.entity.mob.PathAwareEntity;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.Vec3d;
 import oxded.creepingcats.CreepingCats;
 
@@ -21,7 +22,7 @@ public class FleeGoalCanStartMixin {
         FleeEntityGoal<?> fleeGoal = (FleeEntityGoal<?>)(Object)this;
         PathAwareEntity mob = ((MobAccessor)fleeGoal).getMob();
         if (mob instanceof CreeperEntity) {
-            LivingEntity targetEntity = mob.getWorld().getClosestEntity(mob.getWorld().getEntitiesByClass(((ClassToFleeFromAccessor)fleeGoal).getClassToFleeFrom(), mob.getBoundingBox().expand(CreepingCats.maxFleeDistance, CreepingCats.maxFleeDistance, CreepingCats.maxFleeDistance), (livingEntity) -> {
+            LivingEntity targetEntity = ((ServerWorld)mob.getWorld()).getClosestEntity(mob.getWorld().getEntitiesByClass(((ClassToFleeFromAccessor)fleeGoal).getClassToFleeFrom(), mob.getBoundingBox().expand(CreepingCats.maxFleeDistance, CreepingCats.maxFleeDistance, CreepingCats.maxFleeDistance), (livingEntity) -> {
                 return true;
             }), CreepingCats.targetPredicate, mob, mob.getX(), mob.getY(), mob.getZ());
             if (targetEntity == null) {
